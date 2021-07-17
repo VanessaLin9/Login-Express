@@ -16,12 +16,9 @@ app.set('view engine', 'handlebars')
 require('./config/mongoose')
 
 
-app.get('/', (req, res) => {
-  res.render('index')
-})
-
 app.use(methOverride('_method'))
 app.use(routes)
+
 app.listen(port, () => {
   console.log(`express is listen on localhast${port}!`)
 })
