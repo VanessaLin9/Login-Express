@@ -8,6 +8,16 @@ const bodyParser = require('body-parser')
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/Login', { useNewUrlParser: true, useUnifiedTopology: true })
+const db = mongoose.connection
+
+db.on('error', () => {
+  console.log('mongoDB error!')
+})
+db.once('open', () => {
+  console.log('mongoDB connected!')
+})
 
 app.get('/', (req, res) => {
   res.render('index')
