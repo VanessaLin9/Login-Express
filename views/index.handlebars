@@ -1,26 +1,27 @@
-<div class="container column">
-  <div class="align-items-center">
-    <h4>Account Login</h4>
-    <form action="/" method="POST">
+<div class="container">
+    
+  <h3 class="m-3">Account Login</h3>
 
-      <div>
-        <input type="email" class="form-control {{ nonUser}} " placeholder="請輸入帳號信箱" name="account"
-          value="{{option.account}}" required>
-        <div class="invalid-feedback">
-          此信箱查無使用者.
-        </div>
+  <form action="/" method="POST">
+
+    <div>
+      <input type="email" class="m-2 form-control {{ nonUser}} " placeholder="請輸入帳號信箱" name="account"
+        value="{{option.account}}" required>
+      <div class="invalid-feedback">
+        此信箱查無使用者.
       </div>
+    </div>
 
-      <div>
-        <input type="password" class="form-control {{{ errorPassword }}}" placeholder="請輸入密碼" name="password" required>
-        <div class="invalid-feedback">
-          密碼錯誤.
-        </div>
+    <div>
+      <input type="password" class="m-2 form-control {{{ errorPassword }}}" placeholder="請輸入密碼" name="password" required>
+      <div class="invalid-feedback">
+        密碼錯誤.
       </div>
+    </div>
 
-      <button type="submit" class="btn btn-dark">Sign in</button>
+    <button type="submit" class="btn btn-dark m-2 d-flex justify-content-center">Sign in</button>
 
-    </form>
-  </div>
+  </form>
+  
 
 </div>
