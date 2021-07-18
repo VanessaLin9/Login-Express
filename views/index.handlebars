@@ -1,13 +1,21 @@
 <div class="container column">
   <div class="align-items-center">
     <h4>Account Login</h4>
-    <form action="/">
+    <form action="/" method="POST">
 
       <div>
-        <input type="email" placeholder="請輸入帳號信箱" required>
+        <input type="email" class="form-control {{ nonUser}} " placeholder="請輸入帳號信箱" name="account"
+          value="{{option.account}}" required>
+        <div class="invalid-feedback">
+          此信箱查無使用者.
+        </div>
       </div>
+
       <div>
-        <input type="text" placeholder="請輸入密碼" required>
+        <input type="password" class="form-control {{{ errorPassword }}}" placeholder="請輸入密碼" name="password" required>
+        <div class="invalid-feedback">
+          密碼錯誤.
+        </div>
       </div>
 
       <button type="submit" class="btn btn-dark">Sign in</button>
