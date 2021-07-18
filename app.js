@@ -2,7 +2,9 @@ const express = require('express')
 const app = express()
 const port = 3000
 const methOverride = require('method-override')
+const cookieParser = require('cookie-parser')
 const routes = require('./routes')
+
 
 
 const User = require('./models/login')
@@ -18,6 +20,7 @@ require('./config/mongoose')
 
 app.use(methOverride('_method'))
 app.use(routes)
+app.use(cookieParser())
 
 app.listen(port, () => {
   console.log(`express is listen on localhast${port}!`)
